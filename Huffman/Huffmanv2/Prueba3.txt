@@ -1,0 +1,134 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+
+public class ArregloBalon extends Frame implements ActionListener, WindowListener {
+
+	// Variables de instancia
+	private Button inicio;
+	private TextField t1;
+		
+		
+	// Constructor PruebaBalon
+	public ArregloBalon()  {
+
+		setSize(500, 500);
+
+		t1 = new TextField("",20);
+		inicio = new Button("Go");
+
+		inicio.addActionListener(this);
+
+		setLayout(new FlowLayout());
+
+		addWindowListener(this);
+		add(t1);
+		add(inicio);
+	}
+
+   	/**
+	 * Método que sirve para ejecuar las acciones dependiendo
+	 * del escuchador que mando su ejecución
+	 *
+	 * @param e el evento que se escucho.
+	 */
+	public void  actionPerformed(ActionEvent e) {
+		int numero = Integer.parseInt(t1.getText());
+		int aleatorioX1, aleatorioX2, aleatorioY1, aleatorioY2;
+		Graphics g = getGraphics();
+		Random n = new Random();
+		Balon[] ball = new Balon[numero];  
+		int i = 0;
+		int mueve = n.nextInt(2);
+		int[] cambia = new int[numero];
+		for(i=0; i<numero; i++){
+				ball[i] = new Balon(n.nextInt(301),n.nextInt(301),50);
+				cambia[i]=(mueve==0)? -50: 50;
+		}
+		int revote = 0;
+		do{
+			g.clearRect(0, 0, getSize().width, getSize().height);
+			g.setColor(Color.yellow);
+			for(i=0; i<numero; i++){
+				ball[i].modificarY(ball[i].obtenerY()+cambia[i]);
+				ball[i].dibujaBalon(g);
+				if (ball[i].obtenerY()-50<=0){
+					cambia[i] = 50;
+				}
+				if (ball[i].obtenerY()+50>=getSize().height){
+					cambia[i] = -50;
+				}
+			}
+			if (ball[0].obtenerY()+50>=getSize().height)
+				revote++;
+			g.setColor(Color.white);
+			for(int x=0; x<200000; x++);
+		}while(true);
+	}
+		
+	/**
+	 * Método inactivo
+	 *
+	 * @param e el evento
+	 */
+	public void  windowActivated(WindowEvent  e) {
+	}
+
+	/**
+	 * Método inactivo
+	 *
+	 * @param e el evento
+	 */
+	public void  windowClosed(WindowEvent  e) {
+	}
+
+	/**
+	 * Método que sirve para cerrar la ventana
+	 *
+	 * @param e el evento
+	 */
+	public void  windowClosing(WindowEvent  e) {
+		System.exit(0);
+	}
+
+	/**
+	 * Método inactivo
+	 *
+	 * @param e el evento
+	 */
+	public void  windowDeactivated(WindowEvent  e) {
+	}
+
+	/**
+	 * Método inactivo
+	 *
+	 * @param e el evento
+	 */
+	public void  windowDeiconified(WindowEvent  e) {
+	}
+
+	/**
+	 * Método inactivo
+	 *
+	 * @param e el evento
+	 */
+	public void  windowIconified(WindowEvent  e) {
+	}
+
+	/**
+	 * Método inactivo
+	 *
+	 * @param e el evento
+	 */
+	public void  windowOpened(WindowEvent  e) {
+	}
+
+
+	// main
+
+	public static void  main(String[]  args)   {
+		ArregloBalon  d = new  ArregloBalon();
+		d.setVisible(true);
+
+	}
+}

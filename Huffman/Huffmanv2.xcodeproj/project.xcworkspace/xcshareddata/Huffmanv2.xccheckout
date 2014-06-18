@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AF70D7B4-4074-4EE1-9145-7EC9D0B43780</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Huffmanv2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D7B3D86D-312C-4640-8AF0-4638C7C82DEF</key>
+		<string>https://github.com/ferrufino/Algorithms.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Huffmanv2/Huffmanv2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D7B3D86D-312C-4640-8AF0-4638C7C82DEF</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ferrufino/Algorithms.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D7B3D86D-312C-4640-8AF0-4638C7C82DEF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D7B3D86D-312C-4640-8AF0-4638C7C82DEF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Algoritmos</string>
+		</dict>
+	</array>
+</dict>
+</plist>

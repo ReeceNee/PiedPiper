@@ -1,0 +1,109 @@
+System Overview
+
+Life Link, is a hospital community software that supports the medical staff reducing medical errors, and connects hospitals all around the globe so that work, efforts, knowledge ,are combined to help people live healthier lifes.  
+
+Australian Government reports, point that 1 of every 9 deaths is caused by a medical error[1]
+
+Human errors are part of our nature and are one thing we must accept to live with. Current software applications are not enough for the medical staff around the world to prevent this kind of error, and top level medical expertise is a luxury not every hospital, community, even countries can afford.
+ 
+Life Link (LiLi) is a software system that compliments the existing software platforms, integrates Health level 7 standards, and uses the latest Microsoft technologies to help prevent medical errors, communicate, and integrate medic communities and expertise from all around the world.
+ 
+System Architecture
+
+LiLi is basically a Service Oriented Architecture (SOA) system. The main reason to employ this kind of architecture is the mobility it provides, giving the users the chance to access all of its functionality without any bound to a specific location. In the previous section all the components of the system and their interactions where described, where it was shown that all but two of it’s components reside on the server side of the application, these two components being the MedShare components which are small client applications which are designed to consume webservices and periodical syndications. 
+
+Regarding the architecture of the remaining server side components it should be noted that the architecture was design to support, as much as possible, component (new services) pluggability, and it is specifically layered to result in minimum code refactoring, thus presenting a quality attribute of extensibility.
+
+LiLi’s main architecture is presented in figure 1. The layered modularity of the system can be noted from the architectures representation the figure. The architecture presents de following layers. 
+Figure 1. LiLi´s Main Architecture
+
+
+	The Data Abstraction Layer (DAL), which is in charge of meaningfully representing the Database-stored information to the upper layers, as well as providing persistence to the data. This is the lowest layer of the architecture and is conformed by a single component:
+ 
+The Data Presentation (DP) component offers the necessary interfaces to ensure upper layers an access to the DAL services (data creation, selection, modification and deletion).
+ 
+The Service Layer (SL) is in charge of grouping all of our SOA’s client services. This layer functionality is similar to the commonly referred Business Logical Layer (BLL). This layer uses the DAL to provide data access to its components. The main components existing in the SL are:
+
+The Data Mining (DM) component is in charge of finding statistical and probabilistical patterns in the stored data.
+
+The Web Services (WS) component is in charge of providing automated, platform independent and standards compliant interfaces for accessing the other local services provided by the system. This component follows the ws* standards for the definition of its interfaces.	
+
+The Web Forms (WF) component is in charge of providing a user interactive external interface to the other local services.
+
+
+
+
+The Service Control (SC) layer is in charge of controlling security and 
+synchronization amongst all the existing servers in the LiLi community. This layer is conformed by the following components:
+
+The Collaboration (CB) component is in charge of requesting missing information from and submitting necessary information to the other servers on the LiLi community.
+
+The Identity Management (IM) component is in charge of the local system security presenting authorization lists and permission lists. 
+	
+The Service Catalog (SC) component maintain the current state of the global LiLi services offered by the Directory server, and is in charge of deciding which service to use in which circumstances.
+
+The Publishing Front End Layer (PFE) is in charge of giving format to the data
+created and used by the LiLi Community. In order to do this, the PFE is capable of representing the information in the following formats:
+
+RSS: The LiLi Feed is published using the RSS format, in order to allow preexisting news reading applications to subscribe to it, and be able to receive up to date information.
+
+XML: All of LiLi’s webservices use SOAP in order to communicate, which is based itself on XML. By providing access to services and information via XML, we assure easy interoperation as well as a language agnostic interface.
+
+Health Level 7 (HL7): Provides seamless and transparent integration with medical software and hardware platforms. It provides a language-independent information sharing specification ensuring 100% working integration with preexisting medical systems. This means LiLi is, by nature, compatible with current and future medical software and hardware interfaces.
+
+
+Figure 2, shows the distribution of the LiLi Community. Basically the system is composed of LiLi Servers (one per hospital in the LiLi Community) all connected in a logical star topology, with the Central Directory Server lying at its center. 
+
+
+Figure 2. LiLi Community Distribution
+
+
+
+Functional System Component Overview
+
+	LifeLink consists of 8 basic modules and applications which together form the complete platform that allows us to collaborate and provide all the required services needed to help medical communities [fig. 3]. Each part of the whole system 
+
+Central Lili Directory
+	
+	This is the principal control services of the community, and provides a communication interface, so that feeds, hospitals, and clinical histories which are needed could be shared and coordinated all round the world. Based on SQL Server 2005 and Windows Communication Foundation, the directory system is composed of webservices that consume the other webservices. The CLD does not contain the whole the information of lili central databases, but it used only as an initial point to provide communication between lili local subsystems. Lili locals register in the directory service ,which manages who around the world is using LiLi and coordinates the global search of clinical histories, and data sharing. 
+	
+
+
+
+Unified Clinical History Service
+	The subsystem is a series webservices which provides a transparent interface for developers, hospitals and the lili local subsystems, to share and coordinate integration of clinical history data.  The system uses Microsoft WCF(Windows Communication Foundation) to allow LiLi local subsystems and other developers, access to clinical history searches, and integrates data across the world, in case a patient was hospitalized in different places and clinical histories do not match or become outdated. It also provides an Health Level 7 standard interface, so that Lili could be integrated with any other Health software system which uses the world standard. This allows the system to transparently work with current hospital software solutions.
+
+
+Knowledge Assistance Feed 
+
+	When a clinical case is obscure or doctors do not have access to enough knowledge resources to provide a certain diagnostic, a world case publication is sent trough the world and updated real time using Webservices and an RSS standard. The local LiLi subsystem publishes the clinical case, without disclosing any information that places the patient privacy in risk. The published case is managed by this module so that feeds are sorted by medical priority and doctors around the world are seeing only current medical cases needing assistance. All assistance information is transmitted via the XML RSS standard, using webservices so that any client could be integrated to the subsystem apart of MedShare (explained below). Microsoft Outlook, and Internet explorer 7 beta clients either using a PC, PDA or smart cell phone could connect to the Knowledge assistance feed.
+
+Medshare
+	In order to provide an instant publishing of the critic medical cases, dynamic display systems were developed to ensure information availability 24/7. The purpose of the component was a visually appealing software component. Using the new Windows Vista WinFX and current 3D APIs 2 publishing platforms ensure that clinical case exposure to experts is maximized. The second component is a Windows 3D display which would serve an advertising display, located in big screens and could be places in places like the doctors lunch area or the lounge area showing cases real-time. 
+
+Windows Vista (WinFX) Widget
+The first component is a XAML widget which allows a permanent dock on the doctor’s screen, without interfering with their work. The widget reads the RSS Feed and displays it in real time. It also allows integration with Windows Vista , since the XAML widget could easily be integrated to the Vista dock Bar.
+
+Windows 3D Unassisted Display
+The second component is a Windows 3D display which would serve an advertising display, located in big screens and could be places in places like the doctors lunch area or the lounge area showing cases real-time. 
+
+
+Hospital Server Administration
+	The whole local lili systems run on a SQL Server 2005 platform , which runs entirely on web services and ASP.NET 2.0 interfaces. This Web administration console is the startup point for the local hospital, to configure and publish itself in the LiLi NetWork. 
+
+Tablet / Pocket PC client
+	The medics point of interaction with the LiLi local Subsystem is via a thin client developed with ASP.NET 2.0. The client provides the interaction and consulting services to the doctors. The ASP .NET2.0 platform was chosen because of it’s modularity and possibility of use with mobile devices.  A medic could interact with LiLi either by using a standard notebook, a tablet PC or their PDA’s. 
+
+Data Mining Services
+	Information consistence could be checked by doctors by reviewing the Data Mining application. Using Microsoft Analysis Services, Naive Bayes and  Microsoft clustering algorithms, existing patient information  is mined in the search of uncommon patterns and inconsistencies , in the search of avoiding wrong prescriptions or diagnosis problems. The Data Mining runs on background at the LiLi server with SQL Server 2005 , and a thin client interface provides doctors to view and navigated the mined clusters through a web application, easily viewing the information from their tablet pc’s.
+
+
+Software Development Methodology
+	The whole software development cycle was done using a component base mythology. The distributed nature of the project, and the multiple modules needed, helped us to define modular software architecture. Each module was then developed using a spiral software methodology, allowing us to do extensive unit testing along the development cycle and refining software functionality. This methodology was chosen since it allowed us to guarantee a fully working base subsystem and a reduction of bugs, isolating them in components reducing development and test time when the component integration took place. 
+
+
+
+System Extension Possibilities
+
+The whole LiLi system is built on top of web services layers, with a top web service  layer integrating other web services. Microsoft WCF services provided the integration web service, which allows other services to be added in the future extending the lili public interface. New platforms could easily and securely connect to the LiLi network to extend the current platform. In addition, current hospital software platforms can be integrated with LiLi , and the HL7 standard ensures seamless integration with other software and hardware medical platforms.
+	
