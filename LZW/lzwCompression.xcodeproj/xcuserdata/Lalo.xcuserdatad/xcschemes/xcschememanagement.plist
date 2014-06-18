@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>LZW.xcscheme</key>
+		<key>lzwCompression.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>66C12E7C195249D7001DA46E</key>
+		<key>208673C51915BC6900915CAD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

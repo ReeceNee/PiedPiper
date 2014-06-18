@@ -7,31 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66C12E81195249D7001DA46E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66C12E80195249D7001DA46E /* main.cpp */; };
-		66C12E83195249D7001DA46E /* LZW.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66C12E82195249D7001DA46E /* LZW.1 */; };
+		208673CA1915BC6900915CAD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 208673C91915BC6900915CAD /* main.cpp */; };
+		208673CC1915BC6A00915CAD /* lzwCompression.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 208673CB1915BC6A00915CAD /* lzwCompression.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		66C12E7B195249D7001DA46E /* CopyFiles */ = {
+		208673C41915BC6900915CAD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				66C12E83195249D7001DA46E /* LZW.1 in CopyFiles */,
+				208673CC1915BC6A00915CAD /* lzwCompression.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		66C12E7D195249D7001DA46E /* LZW */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LZW; sourceTree = BUILT_PRODUCTS_DIR; };
-		66C12E80195249D7001DA46E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		66C12E82195249D7001DA46E /* LZW.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LZW.1; sourceTree = "<group>"; };
+		208673C61915BC6900915CAD /* lzwCompression */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lzwCompression; sourceTree = BUILT_PRODUCTS_DIR; };
+		208673C91915BC6900915CAD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		208673CB1915BC6A00915CAD /* lzwCompression.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = lzwCompression.1; sourceTree = "<group>"; };
+		208673D21915C8A100915CAD /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		208673D31915FC6C00915CAD /* File.lzw */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.lzw; sourceTree = "<group>"; };
+		208673D41916128E00915CAD /* FileDec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FileDec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		66C12E7A195249D7001DA46E /* Frameworks */ = {
+		208673C31915BC6900915CAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,90 +44,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		66C12E74195249D7001DA46E = {
+		208673BD1915BC6800915CAD = {
 			isa = PBXGroup;
 			children = (
-				66C12E7F195249D7001DA46E /* LZW */,
-				66C12E7E195249D7001DA46E /* Products */,
+				208673C81915BC6900915CAD /* lzwCompression */,
+				208673C71915BC6900915CAD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		66C12E7E195249D7001DA46E /* Products */ = {
+		208673C71915BC6900915CAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				66C12E7D195249D7001DA46E /* LZW */,
+				208673C61915BC6900915CAD /* lzwCompression */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		66C12E7F195249D7001DA46E /* LZW */ = {
+		208673C81915BC6900915CAD /* lzwCompression */ = {
 			isa = PBXGroup;
 			children = (
-				66C12E80195249D7001DA46E /* main.cpp */,
-				66C12E82195249D7001DA46E /* LZW.1 */,
+				208673C91915BC6900915CAD /* main.cpp */,
+				208673D21915C8A100915CAD /* File */,
+				208673D31915FC6C00915CAD /* File.lzw */,
+				208673D41916128E00915CAD /* FileDec */,
+				208673CB1915BC6A00915CAD /* lzwCompression.1 */,
 			);
-			path = LZW;
+			path = lzwCompression;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		66C12E7C195249D7001DA46E /* LZW */ = {
+		208673C51915BC6900915CAD /* lzwCompression */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 66C12E86195249D7001DA46E /* Build configuration list for PBXNativeTarget "LZW" */;
+			buildConfigurationList = 208673CF1915BC6A00915CAD /* Build configuration list for PBXNativeTarget "lzwCompression" */;
 			buildPhases = (
-				66C12E79195249D7001DA46E /* Sources */,
-				66C12E7A195249D7001DA46E /* Frameworks */,
-				66C12E7B195249D7001DA46E /* CopyFiles */,
+				208673C21915BC6900915CAD /* Sources */,
+				208673C31915BC6900915CAD /* Frameworks */,
+				208673C41915BC6900915CAD /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LZW;
-			productName = LZW;
-			productReference = 66C12E7D195249D7001DA46E /* LZW */;
+			name = lzwCompression;
+			productName = lzwCompression;
+			productReference = 208673C61915BC6900915CAD /* lzwCompression */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		66C12E75195249D7001DA46E /* Project object */ = {
+		208673BE1915BC6800915CAD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Gustavo Ferrufino";
+				ORGANIZATIONNAME = Lalo;
 			};
-			buildConfigurationList = 66C12E78195249D7001DA46E /* Build configuration list for PBXProject "LZW" */;
+			buildConfigurationList = 208673C11915BC6800915CAD /* Build configuration list for PBXProject "lzwCompression" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 66C12E74195249D7001DA46E;
-			productRefGroup = 66C12E7E195249D7001DA46E /* Products */;
+			mainGroup = 208673BD1915BC6800915CAD;
+			productRefGroup = 208673C71915BC6900915CAD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				66C12E7C195249D7001DA46E /* LZW */,
+				208673C51915BC6900915CAD /* lzwCompression */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		66C12E79195249D7001DA46E /* Sources */ = {
+		208673C21915BC6900915CAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66C12E81195249D7001DA46E /* main.cpp in Sources */,
+				208673CA1915BC6900915CAD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		66C12E84195249D7001DA46E /* Debug */ = {
+		208673CD1915BC6A00915CAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -162,7 +168,7 @@
 			};
 			name = Debug;
 		};
-		66C12E85195249D7001DA46E /* Release */ = {
+		208673CE1915BC6A00915CAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -194,14 +200,14 @@
 			};
 			name = Release;
 		};
-		66C12E87195249D7001DA46E /* Debug */ = {
+		208673D01915BC6A00915CAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		66C12E88195249D7001DA46E /* Release */ = {
+		208673D11915BC6A00915CAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -211,24 +217,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		66C12E78195249D7001DA46E /* Build configuration list for PBXProject "LZW" */ = {
+		208673C11915BC6800915CAD /* Build configuration list for PBXProject "lzwCompression" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66C12E84195249D7001DA46E /* Debug */,
-				66C12E85195249D7001DA46E /* Release */,
+				208673CD1915BC6A00915CAD /* Debug */,
+				208673CE1915BC6A00915CAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		66C12E86195249D7001DA46E /* Build configuration list for PBXNativeTarget "LZW" */ = {
+		208673CF1915BC6A00915CAD /* Build configuration list for PBXNativeTarget "lzwCompression" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66C12E87195249D7001DA46E /* Debug */,
-				66C12E88195249D7001DA46E /* Release */,
+				208673D01915BC6A00915CAD /* Debug */,
+				208673D11915BC6A00915CAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 66C12E75195249D7001DA46E /* Project object */;
+	rootObject = 208673BE1915BC6800915CAD /* Project object */;
 }
